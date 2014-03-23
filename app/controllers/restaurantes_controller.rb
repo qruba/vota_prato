@@ -53,8 +53,5 @@ class RestaurantesController < ApplicationController
 	def restaurante_params
 		params.require(:restaurante).permit(:nome, :endereco, :especialidade)
 	end
-
-	def teste
-		puts "teste"
-	end
+ 
 end
