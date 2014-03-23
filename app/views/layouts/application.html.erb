@@ -4,12 +4,15 @@
   <title>VotaPrato</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag "scaffold" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= menu %w[clientes qualificacoes restaurantes] %>
+	
+	<%= yield %>
 
-<%= yield %>
-
+	<script type="text/javascript">
+		<%=  yield  :js %>
+	</script>
 </body>
 </html>

@@ -12,6 +12,9 @@ class Restaurante < ActiveRecord::Base
 
 	validate :primeira_letra_maiuscula
 
+	has_attached_file :foto, styles:
+	{ medium: "300x300>", thumb: "100x100>" }
+
 	private
 		def primeira_letra_maiuscula
 			errors.add(:nome,

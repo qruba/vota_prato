@@ -30,6 +30,7 @@ class ComentariosController < ApplicationController
       if @comentario.save
         format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
         format.json { render action: 'show', status: :created, location: @comentario }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @comentario.errors, status: :unprocessable_entity }
@@ -58,6 +59,7 @@ class ComentariosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to comentarios_url }
       format.json { head :no_content }
+      format.js   { head :ok}
     end
   end
 
