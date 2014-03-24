@@ -12,8 +12,13 @@ class Restaurante < ActiveRecord::Base
 
 	validate :primeira_letra_maiuscula
 
-	has_attached_file :foto, styles:
-	{ medium: "300x300>", thumb: "100x100>" }
+	has_attached_file :foto, styles: { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.jpg"
+	# Validate content type
+  	validates_attachment_content_type :foto, :content_type => /\Aimage/
+	# Validate filename
+  	validates_attachment_file_name :foto, :matches => [/png\Z/, /jpe?g\Z/]
+	# Explicitly do not validate
+  	do_not_validate_attachment_file_type :foto
 
 	private
 		def primeira_letra_maiuscula
@@ -21,3 +26,4 @@ class Restaurante < ActiveRecord::Base
 				"Primeira letra deve ser maiuscula") unless nome =~ /[A-Z].*/
 		end
 end
+ 

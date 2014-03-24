@@ -121,12 +121,13 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  cocaine (~> 0.5.3)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
   kaminari
   mysql2
-  paperclip
+  paperclip (~> 4.1.1)
   rails (= 4.0.4)
   sass-rails (~> 4.0.2)
   sdoc

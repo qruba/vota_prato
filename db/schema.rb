@@ -59,11 +59,15 @@ ActiveRecord::Schema.define(version: 20140323131249) do
   end
 
   create_table "restaurantes", force: true do |t|
-    t.string   "nome",          limit: 80
+    t.string   "nome",              limit: 80
     t.string   "endereco"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "especialidade", limit: 40
+    t.string   "especialidade",     limit: 40
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
   end
 
 end

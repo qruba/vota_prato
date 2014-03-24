@@ -6,9 +6,10 @@
 </ul>
 <% end %>
 
-<%= form_for @restaurante do |f| %>
+<%= form_for @restaurante , :url => restaurantes_path, :html => { :multipart => true } do |f| %>
 	Nome: <%= f.text_field :nome %> <br/>
 	Endereço: <%= f.text_field :endereco %> <br/>
 	Especialidade: <%= f.text_field :especialidade %> <br/>
+	<%= f.file_field :foto %> <br/>
 	<%= f.submit %>
 <% end %>
